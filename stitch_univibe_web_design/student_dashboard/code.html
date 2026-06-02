@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>UniVibe | Student Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Be+Vietnam+Pro:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .fuzzy-shadow {
+            box-shadow: 0 10px 40px -10px rgba(139, 92, 246, 0.08);
+        }
+        .glass-header {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .orb-animation {
+            background: linear-gradient(135deg, #F47D4A 0%, #8B5CF6 100%);
+            filter: blur(8px);
+            animation: pulse 4s infinite ease-in-out;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.2); opacity: 0.9; }
+        }
+        .pathway-dashed {
+            background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23dec0b6' stroke-width='2' stroke-dasharray='8%2c 12' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-container": "#8455ef",
+                      "surface": "#fff8f4",
+                      "inverse-primary": "#ffb598",
+                      "on-error": "#ffffff",
+                      "inverse-on-surface": "#f9efe8",
+                      "error": "#ba1a1a",
+                      "surface-container-low": "#fcf2ea",
+                      "tertiary": "#006c49",
+                      "primary-fixed": "#ffdbce",
+                      "on-tertiary": "#ffffff",
+                      "surface-container": "#f6ece5",
+                      "primary-container": "#f47d4a",
+                      "on-secondary-fixed-variant": "#5516be",
+                      "error-container": "#ffdad6",
+                      "tertiary-container": "#00b57d",
+                      "on-secondary-fixed": "#23005c",
+                      "outline": "#8a7269",
+                      "on-tertiary-fixed": "#002113",
+                      "on-surface-variant": "#57423a",
+                      "warm-bg": "#FFFBF7",
+                      "surface-container-highest": "#ebe1da",
+                      "surface-variant": "#ebe1da",
+                      "surface-dim": "#e2d8d1",
+                      "secondary-fixed-dim": "#d0bcff",
+                      "on-primary-container": "#622000",
+                      "on-secondary-container": "#fffbff",
+                      "soft-clay": "#F97316",
+                      "secondary": "#6b38d4",
+                      "on-tertiary-container": "#003f29",
+                      "on-primary-fixed-variant": "#7f2b00",
+                      "secondary-fixed": "#e9ddff",
+                      "surface-container-lowest": "#ffffff",
+                      "mellow-yellow": "#FEF3C7",
+                      "surface-container-high": "#f1e6df",
+                      "outline-variant": "#dec0b6",
+                      "on-primary-fixed": "#370e00",
+                      "on-background": "#1f1b17",
+                      "primary": "#a14010",
+                      "on-tertiary-fixed-variant": "#005236",
+                      "on-secondary": "#ffffff",
+                      "background": "#fff8f4",
+                      "on-primary": "#ffffff",
+                      "primary-fixed-dim": "#ffb598",
+                      "surface-bright": "#fff8f4",
+                      "tertiary-fixed": "#6ffbbe",
+                      "inverse-surface": "#352f2b",
+                      "on-surface": "#1f1b17",
+                      "tertiary-fixed-dim": "#4edea3",
+                      "surface-tint": "#a14010",
+                      "on-error-container": "#93000a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit": "4px",
+                      "margin-desktop": "40px",
+                      "container-max": "1200px",
+                      "gutter": "24px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Plus Jakarta Sans"],
+                      "display-hero-mobile": ["Plus Jakarta Sans"],
+                      "chat-bubble": ["Be Vietnam Pro"],
+                      "headline-md": ["Plus Jakarta Sans"],
+                      "body-lg": ["Be Vietnam Pro"],
+                      "display-hero": ["Plus Jakarta Sans"],
+                      "body-md": ["Be Vietnam Pro"],
+                      "label-caps": ["Be Vietnam Pro"]
+              },
+              "fontSize": {
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                      "display-hero-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "chat-bubble": ["15px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "display-hero": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-warm-bg text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 glass-header shadow-[0_4px_20px_rgba(139,92,246,0.08)]">
+<div class="flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex items-center gap-8">
+<span class="font-headline-md text-headline-md font-bold text-primary">UniVibe</span>
+<nav class="hidden md:flex gap-6">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Community</a>
+<a class="font-body-md text-body-md text-primary font-semibold border-b-2 border-primary pb-1" href="#">Campus Vibe</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Career Paths</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined p-2 text-on-surface-variant hover:bg-mellow-yellow/30 rounded-lg transition-all active:scale-95">explore</button>
+<button class="material-symbols-outlined p-2 text-on-surface-variant hover:bg-mellow-yellow/30 rounded-lg transition-all active:scale-95">notifications</button>
+<div class="h-10 w-10 rounded-full border-2 border-primary-container overflow-hidden">
+<img alt="Student Profile Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfnDEI8Xv_EZf052ZiAszREkgbpksbcQb47MDbdzA1bJkNzI6-LF5CPXExfxXVsTh121jDRVkYx1PJmAXANCvOY-8TyFPeyKsUcB_LD4gg8IjT2vGGaYfETcTP1N1d9yB4QnWJjI7fJuIEyK1nXdvR8SGMGOmcEACbKlAwHYaekHxsPuxKIxOH-ZygSDWbrPvAdY4NI5UbO-I_x_hnaB0HszmtkE45OJS35OjjPPh0XJ2XVlmbNHFIbnELiRi29eHoHjCqOiL3lum-"/>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-12 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto space-y-gutter">
+<!-- Welcome Section -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-4">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Hey there, Felix! 👋</h1>
+<p class="text-on-surface-variant text-body-lg">Here's what's buzzing at Monash today.</p>
+</div>
+<div class="flex gap-2 flex-wrap">
+<span class="px-3 py-1 bg-primary-fixed text-on-primary-fixed text-label-caps rounded-full border border-primary/10">Creative Connector</span>
+<span class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed text-label-caps rounded-full border border-tertiary/10">Quiet Explorer</span>
+</div>
+</section>
+<!-- Main Dashboard Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column: Campus Vibe Story -->
+<div class="lg:col-span-7 space-y-gutter">
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 fuzzy-shadow relative overflow-hidden group">
+<!-- AI Orb Ornament -->
+<div class="absolute -top-12 -right-12 w-32 h-32 orb-animation rounded-full"></div>
+<div class="relative z-10 space-y-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-label-caps text-primary uppercase tracking-widest">AI Insights • Monash University</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Your Campus Vibe at Monash</h2>
+<div class="aspect-[16/9] w-full rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A soft, dreamlike digital illustration of a modern university campus at sunset. The style is hand-drawn and tactile with warm orange and soft purple gradients. Students are seen lounging on lush green lawns under abstract, organic-shaped trees, with a contemporary glass library building reflecting the golden hour light in the background. The mood is peaceful, hopeful, and inviting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuARKLTuLhdGUoeJWaJZLg7kYJ6aylBS1xtZ6eRJRuH6VO8RT4JpStds7iwICf7K3gcgGW6SvX_5gA1Ob8c86Qo3b9eTHuqCE2STKNffsAvonJxxI89OiOeqXoS2RLBYfSAW_YdFZB6p3FGEdcVL7M-229JOXPIDcF_DYZqNgrC4masX8CCIbmtb7isSAOKm6vBy0rWvvVPFj5lnslN65ubWjLLzP93XZ_SgGy4mOr8yHtBO5w-DzFIfyOX0iaqEtGQ4n-6_4YzRLjLN"/>
+</div>
+<div class="bg-surface-container-low p-6 rounded-lg border-l-4 border-primary">
+<p class="font-chat-bubble text-chat-bubble text-on-surface-variant italic leading-relaxed">
+                                "The energy at the Caulfield Library is peaking right now—perfect for your deep focus style. After your 2 PM lecture, the Sustainable Design Nerds are gathering at the campus cafe for a low-pressure sketch session. It matches your 'Creative Connector' vibe perfectly. Feel like exploring?"
+                            </p>
+</div>
+<button class="w-full md:w-auto px-8 py-3 bg-primary-container text-on-primary-container rounded-full font-semibold hover:opacity-90 transition-all active:scale-95">
+                            Dive into the Story
+                        </button>
+</div>
+</div>
+</div>
+<!-- Right Column: Your Circles -->
+<div class="lg:col-span-5 space-y-gutter">
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 fuzzy-shadow h-full">
+<div class="flex justify-between items-center mb-6">
+<h2 class="font-headline-md text-headline-md text-on-surface">Your Circles</h2>
+<button class="text-primary font-semibold text-body-md hover:underline">See all</button>
+</div>
+<div class="space-y-4">
+<!-- Circle Card 1 -->
+<div class="p-4 rounded-xl bg-warm-bg border border-outline-variant/20 hover:border-primary transition-colors group">
+<div class="flex justify-between items-start mb-3">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-tertiary-container flex items-center justify-center text-white">
+<span class="material-symbols-outlined">eco</span>
+</div>
+<div>
+<h3 class="font-semibold text-on-surface">Sustainable Design Nerds</h3>
+<p class="text-label-caps text-on-surface-variant">12 Active Members</p>
+</div>
+</div>
+<span class="bg-mellow-yellow text-on-surface-variant px-2 py-1 rounded text-[10px] font-bold uppercase">MATCHED</span>
+</div>
+<div class="flex justify-between items-center pt-2">
+<div class="flex -space-x-3">
+<img alt="Member" class="w-8 h-8 rounded-full border-2 border-surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR6glkFxoKJ_nijvkWzw0NOtkYJKNMHxMxS4hCrlvUp7ETwYV30PmxU_HHbREwCx4d_6LEEHSihaSv--mGDgmsG2dMSB6_WwNBov4pEKCOlIJmFlcAnlJXhHCFza6QUCj6of_YDSrEiMweWRHydY-F_AgqocimkjlsNy7G29ZR1X-4WvGdcmvANRV6cAVBnrLvLBJpKYKpoCcj4j0lhOb7TQNEvHno4_yejfIuwOIV32MLmx8o_ARpDe-s2mX2eTG8AlV2CAYYfbzj"/>
+<img alt="Member" class="w-8 h-8 rounded-full border-2 border-surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABTMakWISzn3vg_FBFlZSwPo7C0k8EPDQ0cNLmgj_mGnYe6FTA0coavJv72IXoQ-42W8W_XH-RALAR_aw0ZWLSq398QrDX7KaTxh_uM45CPKsWvSSmu83NImbU_sOrgax-KwI8Mj-yDJB5v3n-l69IOn-OoWSbovQoJUmnYn-KkSWvGa-GjFas2gXopaufBqa5sA83zYvhDOtzBft-phYZKpXA_nLOnjlpfL-4oIY89Px11S5arPi5k8r8Yd6yI1XSNcEEyFU_ajiq"/>
+<img alt="Member" class="w-8 h-8 rounded-full border-2 border-surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpEQ8nh1O_JRK6mbNilso2UPkFgyOtO70YvPtm7V7Bu-ogGnej_ajOR-4xjof2UNErQv9Mrc1EALWOFJQ5_zkh661i6Y4uZ5bbifFPz9-RgWXdiNa9nnIF4OWdBe2wdctlqpg1o9T8YRW0NkTw-Bbw_3dW-LY4Z1d2_84kU-gojtwPWobhODHKFpXfl8Kt7pK86BpJMaJ8BlajC0xDSy_qIzhZFHw9z52EuCDHRiULIVOgoRIcpSKLmXTR0KCznOB7o-pWdtgpYoJU"/>
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-surface-container flex items-center justify-center text-[10px] text-on-surface-variant font-bold">+9</div>
+</div>
+<button class="px-4 py-2 bg-secondary text-white rounded-full text-body-md font-medium hover:bg-secondary-container transition-all active:scale-95">Join Chat</button>
+</div>
+</div>
+<!-- Circle Card 2 -->
+<div class="p-4 rounded-xl bg-warm-bg border border-outline-variant/20 hover:border-primary transition-colors group">
+<div class="flex justify-between items-start mb-3">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center text-white">
+<span class="material-symbols-outlined">palette</span>
+</div>
+<div>
+<h3 class="font-semibold text-on-surface">Digital Sketchbookers</h3>
+<p class="text-label-caps text-on-surface-variant">45 Active Members</p>
+</div>
+</div>
+<span class="bg-mellow-yellow text-on-surface-variant px-2 py-1 rounded text-[10px] font-bold uppercase">TRENDING</span>
+</div>
+<div class="flex justify-between items-center pt-2">
+<div class="flex -space-x-3">
+<img alt="Member" class="w-8 h-8 rounded-full border-2 border-surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8Q41mF3wu50RqR4aHXQX9pW29Pv8Z2lXoS-PNWLvAhPW27ZM0mU0Cd5Zh3PgGV9Kbu9tWijyCwPBWLXM1E9MPIPsSuwoKEjJYL-UJJ0O2zpR315FleUOlUDvwiTSem-vNdzAoPt2IUnLlGQg8mMlf7j5uJf7xO6uGgi5BSB6W2emDlHXE8HZnGyvNr7gqDw5YVvfqnUfQzshpuItpUyblhTbHFVhqizt1wqCAt8s9kXm1mQIZVrdIB0SriX6RiPJF2jbXJsD5k_Uk"/>
+<img alt="Member" class="w-8 h-8 rounded-full border-2 border-surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwolNZWxrFJSjmygH5xHfArTlyhO7rRfP8uRUquOUgvebLCeAscxOpkxiomt6R2RAphvGBbTtdy2_fnM_vbtfnKq4u7a99XUKWZHeWwa55xDIzqIslU6XUvRqNCOMxQkl_Q8E_KmVrV0n70L0JRdptV4olUWL3adgJhq8S8cQAHUuCnVbG3NRMclff8rYRKc7BuR7KYy0qcKP68KOJgjTExEh3GGgyUvhnKxH0yh96a0MDDHFyn_Y3m3_N4zw2SHvhaQy8pJmURhlB"/>
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-surface-container flex items-center justify-center text-[10px] text-on-surface-variant font-bold">+43</div>
+</div>
+<button class="px-4 py-2 bg-secondary text-white rounded-full text-body-md font-medium hover:bg-secondary-container transition-all active:scale-95">Join Chat</button>
+</div>
+</div>
+<!-- Circle Card 3 -->
+<div class="p-4 rounded-xl bg-warm-bg border border-outline-variant/20 hover:border-primary transition-colors group">
+<div class="flex justify-between items-start mb-3">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-soft-clay flex items-center justify-center text-white">
+<span class="material-symbols-outlined">psychology</span>
+</div>
+<div>
+<h3 class="font-semibold text-on-surface">Philosophy &amp; Tea</h3>
+<p class="text-label-caps text-on-surface-variant">8 Active Members</p>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-center pt-2">
+<div class="flex -space-x-3">
+<img alt="Member" class="w-8 h-8 rounded-full border-2 border-surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2W0BvoGFCxLfCA2nKhTah-Jfd86OncSOrskaMsmUsA-vJo5-u64nYUgLBNqnWiYxIqN3OSXYdYCDIEvFAq6Q6DPpWENRAtldqjQG4uTkRoVKOhYVzh66DQKAiN5nnEA84ozps6SAYlI1aIrnshcxjxtuYczncKsadsiXH8h2bI-FacmXFZAI2UP2_OaGjEgdubL_UjcZaza30Fq71Q1scCHThKp3Z6PM3CR68yxQMstCBgROh4W6YqtUPcqYJex3of5_lLRxkF4Gz"/>
+<img alt="Member" class="w-8 h-8 rounded-full border-2 border-surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOHifR6COzd4quXJHBmEbGd6Pr_hwNhNm-iXqqbsVUccjunhTAhb6fbDauL0kPiWeDzjEf8Lm2exJDKi37r1GKhHmIp9ESm2UuqsKHySDO43rW8XEY4AoHZx-vAe6bBFqenzKaK8gJuWdhNcYhgaD9MmYxQrcCr7chK7oFSx82c2mf3U9dxha7IzbOqoDmdmpEg8An2xbbTMbSMiTbodCP1IrvSi9-ppY-LWM8WHUl2YVYeztIjFS9FGE5W5rXzz6Di43i8H2h990G"/>
+<img alt="Member" class="w-8 h-8 rounded-full border-2 border-surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSwOIiAwqB5XNmhUCe6IWtua5yxr39gxChZtd8qYOamsTwH9UWiPYNNmNYmU7Jcs_Wyamd3aiEYsMmrPzwSa6-SG4L3TyTFZvtlO2d1l5_85t-NN9d3KzHh5hUgtYj19khzMtXZXLsf3oNBLkAxCIWi49v8ua_thgFkEiJ35oVMx7mf8d4BlPFuhoqR2ir87X5aP6PTDyDCzbvEZBjfqnN1uFpiHG6R9Am1T7u5OtwAlUA4c65fA55v9-pMdbhXsTgG3fgoc17V2mI"/>
+</div>
+<button class="px-4 py-2 bg-secondary text-white rounded-full text-body-md font-medium hover:bg-secondary-container transition-all active:scale-95">Join Chat</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Career Outlook Teaser (Bottom) -->
+<section class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 fuzzy-shadow">
+<div class="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
+<div class="text-center md:text-left">
+<h2 class="font-headline-md text-headline-md text-on-surface">Career Outlook</h2>
+<p class="text-on-surface-variant">Your journey from Design to Product Leadership</p>
+</div>
+<button class="px-6 py-2 border-2 border-secondary text-secondary rounded-full font-semibold hover:bg-secondary/5 transition-all">
+                    Explore Pathways
+                </button>
+</div>
+<div class="relative flex flex-col md:flex-row items-center justify-between gap-8 py-4">
+<!-- Pathway Card 1 -->
+<div class="relative z-10 w-full md:w-64 bg-surface-container-low p-6 rounded-xl border-2 border-primary-container text-center">
+<span class="absolute -top-3 left-1/2 -translate-x-1/2 px-2 py-1 bg-primary text-white text-[10px] rounded font-bold">NOW</span>
+<div class="material-symbols-outlined text-primary mb-2 text-3xl">school</div>
+<h4 class="font-bold text-on-surface">UX Design Year 1</h4>
+<p class="text-label-caps text-on-surface-variant">Core Fundamentals</p>
+</div>
+<div class="hidden md:block flex-1 h-0.5 pathway-dashed"></div>
+<!-- Pathway Card 2 -->
+<div class="relative z-10 w-full md:w-64 bg-white p-6 rounded-xl border border-outline-variant/30 text-center opacity-80">
+<div class="material-symbols-outlined text-secondary-container mb-2 text-3xl">work_history</div>
+<h4 class="font-bold text-on-surface">Junior Product Design</h4>
+<p class="text-label-caps text-on-surface-variant">Internship Match</p>
+</div>
+<div class="hidden md:block flex-1 h-0.5 pathway-dashed"></div>
+<!-- Pathway Card 3 -->
+<div class="relative z-10 w-full md:w-64 bg-white p-6 rounded-xl border border-outline-variant/30 text-center opacity-60">
+<div class="material-symbols-outlined text-tertiary-container mb-2 text-3xl">rocket_launch</div>
+<h4 class="font-bold text-on-surface">Product Leadership</h4>
+<p class="text-label-caps text-on-surface-variant">Future Goal</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low w-full rounded-t-xl">
+<div class="flex flex-col md:flex-row justify-between items-center py-12 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto gap-gutter">
+<div class="flex flex-col items-center md:items-start gap-4">
+<span class="font-headline-md text-headline-md font-bold text-primary">UniVibe</span>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-80 hover:opacity-100 transition-opacity">© 2024 UniVibe. Feel it before you're there.</p>
+</div>
+<div class="flex gap-6">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Support</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Us</a>
+</div>
+</div>
+</footer>
+<!-- FAB (Only on Home/Dashboard screens) -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-primary-container text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all z-40">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
+</button>
+<script>
+        // Simple micro-interaction for cards
+        document.querySelectorAll('.fuzzy-shadow').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-4px)';
+                card.style.transition = 'transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body></html>

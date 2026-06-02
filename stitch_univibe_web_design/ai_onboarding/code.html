@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>UniVibe | Discover Your Vibe</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Be+Vietnam+Pro:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#8455ef",
+                    "surface": "#fff8f4",
+                    "inverse-primary": "#ffb598",
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#f9efe8",
+                    "error": "#ba1a1a",
+                    "surface-container-low": "#fcf2ea",
+                    "tertiary": "#006c49",
+                    "primary-fixed": "#ffdbce",
+                    "on-tertiary": "#ffffff",
+                    "surface-container": "#f6ece5",
+                    "primary-container": "#f47d4a",
+                    "on-secondary-fixed-variant": "#5516be",
+                    "error-container": "#ffdad6",
+                    "tertiary-container": "#00b57d",
+                    "on-secondary-fixed": "#23005c",
+                    "outline": "#8a7269",
+                    "on-tertiary-fixed": "#002113",
+                    "on-surface-variant": "#57423a",
+                    "warm-bg": "#FFFBF7",
+                    "surface-container-highest": "#ebe1da",
+                    "surface-variant": "#ebe1da",
+                    "surface-dim": "#e2d8d1",
+                    "secondary-fixed-dim": "#d0bcff",
+                    "on-primary-container": "#622000",
+                    "on-secondary-container": "#fffbff",
+                    "soft-clay": "#F97316",
+                    "secondary": "#6b38d4",
+                    "sunset-gradient": "linear-gradient(135deg, #F47D4A 0%, #8B5CF6 100%)",
+                    "on-tertiary-container": "#003f29",
+                    "on-primary-fixed-variant": "#7f2b00",
+                    "secondary-fixed": "#e9ddff",
+                    "surface-container-lowest": "#ffffff",
+                    "mellow-yellow": "#FEF3C7",
+                    "surface-container-high": "#f1e6df",
+                    "outline-variant": "#dec0b6",
+                    "on-primary-fixed": "#370e00",
+                    "on-background": "#1f1b17",
+                    "primary": "#a14010",
+                    "on-tertiary-fixed-variant": "#005236",
+                    "on-secondary": "#ffffff",
+                    "background": "#fff8f4",
+                    "on-primary": "#ffffff",
+                    "primary-fixed-dim": "#ffb598",
+                    "surface-bright": "#fff8f4",
+                    "tertiary-fixed": "#6ffbbe",
+                    "inverse-surface": "#352f2b",
+                    "on-surface": "#1f1b17",
+                    "tertiary-fixed-dim": "#4edea3",
+                    "surface-tint": "#a14010",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "4px",
+                    "margin-desktop": "40px",
+                    "container-max": "1200px",
+                    "gutter": "24px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "display-hero-mobile": ["Plus Jakarta Sans"],
+                    "chat-bubble": ["Be Vietnam Pro"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "body-lg": ["Be Vietnam Pro"],
+                    "display-hero": ["Plus Jakarta Sans"],
+                    "body-md": ["Be Vietnam Pro"],
+                    "label-caps": ["Be Vietnam Pro"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "display-hero-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "chat-bubble": ["15px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-hero": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background: radial-gradient(circle at top right, #FFF1E6 0%, #FFFBF7 100%);
+            overflow-x: hidden;
+        }
+        
+        .ai-orb {
+            background: linear-gradient(135deg, #F47D4A 0%, #8B5CF6 100%);
+            box-shadow: 0 0 60px rgba(244, 125, 74, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.4);
+            animation: pulse-glow 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { transform: scale(1); opacity: 0.9; filter: blur(2px); }
+            50% { transform: scale(1.05); opacity: 1; filter: blur(0px); }
+        }
+
+        .orb-float {
+            animation: floating 6s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .chat-bubble-tail::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 24px;
+            width: 16px;
+            height: 16px;
+            background: white;
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #dec0b6;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface min-h-screen flex flex-col">
+<!-- Top Navigation / Progress -->
+<header class="fixed top-0 w-full z-50 py-6 px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto flex flex-col items-center gap-4">
+<div class="w-full max-w-[600px] flex justify-between items-center px-2">
+<span class="font-headline-md text-primary font-bold">UniVibe</span>
+<span class="font-label-caps text-on-surface-variant">QUESTION 2 OF 7</span>
+</div>
+<!-- Progress Indicators -->
+<div class="flex gap-3 justify-center">
+<div class="w-3 h-3 rounded-full bg-primary-container shadow-sm"></div>
+<div class="w-3 h-3 rounded-full bg-primary-container shadow-sm"></div>
+<div class="w-3 h-3 rounded-full bg-surface-variant border border-outline-variant"></div>
+<div class="w-3 h-3 rounded-full bg-surface-variant border border-outline-variant"></div>
+<div class="w-3 h-3 rounded-full bg-surface-variant border border-outline-variant"></div>
+<div class="w-3 h-3 rounded-full bg-surface-variant border border-outline-variant"></div>
+<div class="w-3 h-3 rounded-full bg-surface-variant border border-outline-variant"></div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow flex flex-col items-center justify-center pt-32 pb-40 px-margin-mobile">
+<div class="w-full max-w-[600px] flex flex-col items-center gap-12">
+<!-- AI Orb Character -->
+<div class="orb-float relative">
+<div class="ai-orb w-32 h-32 md:w-40 md:h-40 rounded-full flex items-center justify-center relative z-10">
+<span class="material-symbols-outlined text-white text-5xl opacity-80" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<!-- Ambient Glow Behind Orb -->
+<div class="absolute inset-0 bg-secondary blur-3xl opacity-10 rounded-full scale-150"></div>
+</div>
+<!-- Conversation Area -->
+<div class="w-full space-y-6">
+<!-- AI Message -->
+<div class="flex flex-col items-start gap-2">
+<div class="bg-white border border-[rgba(74,68,63,0.1)] p-6 rounded-2xl rounded-tl-none shadow-[0_4px_20px_rgba(139,92,246,0.08)] relative max-w-[85%]">
+<p class="font-chat-bubble text-body-lg text-on-surface">
+                            That's a great start! Now, I'm curious...
+                        </p>
+</div>
+</div>
+<div class="flex flex-col items-start gap-2 animate-in fade-in slide-in-from-bottom-4 duration-700">
+<div class="bg-white border border-[rgba(74,68,63,0.1)] p-6 rounded-2xl rounded-tl-none shadow-[0_4px_20px_rgba(139,92,246,0.08)] relative max-w-[90%]">
+<p class="font-headline-md text-headline-md text-on-surface leading-snug">
+                            What's something you love doing that you've <span class="text-primary italic">never</span> been graded on?
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Input Footer Area -->
+<footer class="fixed bottom-0 w-full bg-surface/40 backdrop-blur-xl border-t border-outline-variant/20 pt-6 pb-10 px-margin-mobile">
+<div class="max-w-[600px] mx-auto relative">
+<div class="relative group">
+<textarea class="w-full bg-surface-container-low border-2 border-transparent focus:border-primary-container focus:ring-0 rounded-2xl p-5 pr-16 text-body-lg font-body-lg text-on-surface transition-all placeholder:text-on-surface-variant/40 resize-none overflow-hidden" id="user-input" oninput="this.style.height = '';this.style.height = this.scrollHeight + 'px'" placeholder="Type your heart out..." rows="1"></textarea>
+<button aria-label="Send message" class="absolute right-3 bottom-3 p-3 bg-primary-container text-white rounded-xl shadow-lg hover:scale-105 active:scale-95 transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">arrow_forward</span>
+</button>
+</div>
+<div class="mt-4 flex flex-wrap gap-2 justify-center">
+<span class="px-4 py-1.5 bg-mellow-yellow/50 text-primary font-label-caps rounded-full border border-primary/10 cursor-pointer hover:bg-mellow-yellow transition-colors">Volunteering</span>
+<span class="px-4 py-1.5 bg-mellow-yellow/50 text-primary font-label-caps rounded-full border border-primary/10 cursor-pointer hover:bg-mellow-yellow transition-colors">Gaming Strategy</span>
+<span class="px-4 py-1.5 bg-mellow-yellow/50 text-primary font-label-caps rounded-full border border-primary/10 cursor-pointer hover:bg-mellow-yellow transition-colors">Cooking for Friends</span>
+<span class="px-4 py-1.5 bg-mellow-yellow/50 text-primary font-label-caps rounded-full border border-primary/10 cursor-pointer hover:bg-mellow-yellow transition-colors">Analog Photography</span>
+</div>
+</div>
+</footer>
+<!-- Personality Tag Decorators -->
+<div class="fixed top-1/4 -left-12 opacity-10 pointer-events-none rotate-[-15deg] hidden lg:block">
+<div class="bg-soft-clay/20 p-4 rounded-xl border-2 border-dashed border-soft-clay/30">
+<span class="font-headline-md text-soft-clay">Creative Connector</span>
+</div>
+</div>
+<div class="fixed bottom-1/4 -right-12 opacity-10 pointer-events-none rotate-[12deg] hidden lg:block">
+<div class="bg-secondary/20 p-4 rounded-xl border-2 border-dashed border-secondary/30">
+<span class="font-headline-md text-secondary">Logical Dreamer</span>
+</div>
+</div>
+<script>
+        // Micro-interaction for typing
+        const input = document.getElementById('user-input');
+        input.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                const text = input.value.trim();
+                if (text) {
+                    // Logic to send message would go here
+                    input.value = '';
+                    input.style.height = 'auto';
+                    
+                    // Simple feedback pulse for the orb
+                    const orb = document.querySelector('.ai-orb');
+                    orb.style.animation = 'none';
+                    orb.offsetHeight; // trigger reflow
+                    orb.style.animation = 'pulse-glow 0.8s ease-in-out';
+                    setTimeout(() => {
+                        orb.style.animation = 'pulse-glow 4s ease-in-out infinite';
+                    }, 800);
+                }
+            }
+        });
+
+        // Hover animation for tags
+        document.querySelectorAll('.font-label-caps').forEach(tag => {
+            tag.addEventListener('click', () => {
+                input.value = tag.innerText;
+                input.focus();
+                // Trigger the auto-resize
+                const event = new Event('input', { bubbles: true });
+                input.dispatchEvent(event);
+            });
+        });
+    </script>
+</body></html>
